@@ -1,5 +1,8 @@
 package skam.apextech;
 
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -16,6 +19,13 @@ public class ApexTech {
     public static final String MODID = "apextech";
     public static final String NAME = MODID;
     public static final String VERSION = "0.0.1";
+
+    public static CreativeTabs apexTab = new CreativeTabs("apexTab") {
+        @Override
+        public Item getTabIconItem() {
+            return Items.REDSTONE;
+        }
+    };
 
     @SidedProxy(clientSide = "skam.apextech.proxy.ClientProxy", serverSide = "skam.apextech.proxy.ServerProxy")
     public static CommonProxy proxy;
