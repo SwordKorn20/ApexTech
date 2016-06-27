@@ -3,6 +3,7 @@ package skam.apextech.block;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import skam.apextech.block.storage.ApexTEBlock;
 
 /**
  * Created by Sword_Korn on 6/27/2016.
@@ -11,9 +12,11 @@ public class BlockRegistry {
     //Blocks
 
     /**
-     * Any basic block with no extended functionality can be regsitered using the registerBlock method.
+     * Any basic block with no extended functionality can be registered using the registerBlock method.
      *
      * @args String of the registry name
+     * @args Float for hardness (if TEBlock)
+     * @args Boolean for render (if TEBlock)
      */
     public static void loadBlockRegistry() {
 
@@ -31,6 +34,21 @@ public class BlockRegistry {
         final ItemBlock itemBlock = new ItemBlock(ATBlock);
 
         return registerBlock(regName, itemBlock, ATBlock);
+    }
+
+    /**
+     * Used to register a block with a bound TileEntity
+     *
+     * @param regName - Block name
+     * @param hardness - As it says
+     * @param isBlockModel - Boolean check. If true, block will render invisible. If false, will render as full block
+     * @return
+     */
+    private static Block registerBlock(String regName, float hardness, boolean isBlockModel) {
+        final Block TEBlock = new ApexTEBlock(regName, hardness, isBlockModel);
+        final ItemBlock itemBlock = new ItemBlock(TEBlock);
+
+        return registerBlock(regName, itemBlock, TEBlock);
     }
 
     /**

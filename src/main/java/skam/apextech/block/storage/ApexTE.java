@@ -6,7 +6,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 
-public class TileMSUCore extends TileEntity implements IEnergyReceiver {
+public class ApexTE extends TileEntity implements IEnergyReceiver {
 
 	protected EnergyStorage storage = new EnergyStorage(20000);
 	
