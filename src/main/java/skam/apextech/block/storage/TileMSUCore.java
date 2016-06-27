@@ -2,12 +2,13 @@ package skam.apextech.block.storage;
 
 import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyReceiver;
+import cofh.api.energy.TileEnergyHandler;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 
-public class ApexTE extends TileEntity implements IEnergyReceiver {
-
+public class TileMSUCore extends TileEnergyHandler {
+	
 	protected EnergyStorage storage = new EnergyStorage(20000);
 	
 	@Override
@@ -16,7 +17,7 @@ public class ApexTE extends TileEntity implements IEnergyReceiver {
 		super.readFromNBT(nbt);
 		storage.readFromNBT(nbt);
 	}
-
+	
 	@Override
 	public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
 

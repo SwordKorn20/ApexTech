@@ -10,7 +10,9 @@ import skam.apextech.block.storage.ApexTEBlock;
  */
 public class BlockRegistry {
     //Blocks
-
+	
+	public static Block MSUCore;
+	
     /**
      * Any basic block with no extended functionality can be registered using the registerBlock method.
      *
@@ -19,6 +21,10 @@ public class BlockRegistry {
      * @args Boolean for render (if TEBlock)
      */
     public static void loadBlockRegistry() {
+    	
+    	
+    	GameRegistry.register(MSUCore.setRegistryName("MSUCore"));
+		GameRegistry.register(new BaseItemBlock(MSUCore).setRegistryName(MSUCore.getRegistryName()));
 
     }
 
@@ -44,13 +50,15 @@ public class BlockRegistry {
      * @param isBlockModel - Boolean check. If true, block will render invisible. If false, will render as full block
      * @return
      */
+    
+    /*
     private static Block registerBlock(String regName, float hardness, boolean isBlockModel) {
         final Block TEBlock = new ApexTEBlock(regName, hardness, isBlockModel);
         final ItemBlock itemBlock = new ItemBlock(TEBlock);
 
         return registerBlock(regName, itemBlock, TEBlock);
     }
-
+   */
     /**
      * **DO NOT USE!!!**
      *

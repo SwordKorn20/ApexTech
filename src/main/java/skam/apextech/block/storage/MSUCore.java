@@ -8,10 +8,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import skam.apextech.ApexTech;
 
-public class ApexTEBlock extends Block {
+public class MSUCore extends Block {
     public static boolean isBlockModel;
 
-    public ApexTEBlock(String regName, float hardness, boolean isBlockModel) {
+    public MSUCore(String regName, float hardness, boolean isBlockModel) {
         super(Material.IRON);
         this.setUnlocalizedName(regName);
         this.setCreativeTab(ApexTech.apexTab);
@@ -36,7 +36,7 @@ public class ApexTEBlock extends Block {
 
     @Override
     public TileEntity createTileEntity(World world, IBlockState state) {
-        return new ApexTE();
+        return new TileMSUCore();
     }
 
     @Override
