@@ -1,4 +1,4 @@
-package skam.apextech.block.Storage;
+package skam.apextech.block.storage;
 
 import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyReceiver;

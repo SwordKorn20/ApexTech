@@ -1,4 +1,4 @@
-package skam.apextech.block.Storage;
+package skam.apextech.block.storage;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -34,23 +34,7 @@ public class MSUCore extends BlockContainer {
         return EnumBlockRenderType.MODEL;
     }
     
-	@Override
-	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
-
-	TileEntity te = world.getTileEntity(pos);
-
-	     TileMSUCore MSU = (TileMSUCore)te;
-
-	     player.addChatComponentMessage(new TextComponentString("Energy Stored: " + MSU.getEnergyStored(side) + "/" + MSU.getMaxEnergyStored(side) + " RF"));
-	     return true;
-	     
-	     if(MSU.getEnergyStored(side) >= 1) {
-	    	 
-	     }
-	
-	
-	}
-
+    
     @Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
 		return new TileMSUCore();
