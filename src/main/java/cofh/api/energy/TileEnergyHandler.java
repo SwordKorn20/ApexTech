@@ -1,4 +1,4 @@
-package api.energy;
+package cofh.api.energy;
 
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -24,10 +24,11 @@ public class TileEnergyHandler extends TileEntity implements IEnergyReceiver, IE
 	}
 
 	@Override
-	public void writeToNBT(NBTTagCompound nbt) {
+	public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
 
-		super.writeToNBT(nbt);
+		nbt = super.writeToNBT(nbt);
 		storage.writeToNBT(nbt);
+		return nbt;
 	}
 
 	/* IEnergyConnection */
