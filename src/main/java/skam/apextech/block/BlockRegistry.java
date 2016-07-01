@@ -3,7 +3,8 @@ package skam.apextech.block;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import skam.apextech.block.storage.ApexTEBlock;
+import skam.apextech.block.storage.MSUCore;
+import skam.apextech.block.storage.MSUCoreActive;
 
 /**
  * Created by Sword_Korn on 6/27/2016.
@@ -11,7 +12,8 @@ import skam.apextech.block.storage.ApexTEBlock;
 public class BlockRegistry {
     //Blocks
 	
-	public static Block MSUCore;
+	public static Block MSUCore = new MSUCore("MSUCore", 2.5F, false);
+	public static Block MSUCoreActive = new MSUCoreActive("MSUCoreActive", 2.5F, false);
 	
     /**
      * Any basic block with no extended functionality can be registered using the registerBlock method.
@@ -25,6 +27,9 @@ public class BlockRegistry {
     	
     	GameRegistry.register(MSUCore.setRegistryName("MSUCore"));
 		GameRegistry.register(new BaseItemBlock(MSUCore).setRegistryName(MSUCore.getRegistryName()));
+		
+		GameRegistry.register(MSUCoreActive.setRegistryName("MSUCoreActive"));
+		GameRegistry.register(new BaseItemBlock(MSUCoreActive).setRegistryName(MSUCoreActive.getRegistryName()));
 
     }
 

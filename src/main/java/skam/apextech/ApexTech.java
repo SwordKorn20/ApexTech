@@ -23,7 +23,7 @@ public class ApexTech {
     public static CreativeTabs apexTab = new CreativeTabs("apexTab") {
         @Override
         public Item getTabIconItem() {
-            return Items.REDSTONE;
+            return Items.DIAMOND;
         }
     };
 

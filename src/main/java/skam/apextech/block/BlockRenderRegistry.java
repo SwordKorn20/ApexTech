@@ -9,6 +9,7 @@ public class BlockRenderRegistry {
 	
 	public static void regRenders() {
 		reg(BlockRegistry.MSUCore);
+		reg(BlockRegistry.MSUCoreActive);
 		
 	}
 	
