@@ -1,22 +1,22 @@
 package skam.apextech.block.storage;
+
 import cofh.api.energy.EnergyStorage;
-import cofh.api.energy.TileEnergyHandler;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 
-public class ApexTE extends TileEnergyHandler {
+public class TileMSUCore extends ApexTE {
 
-	public static int intStorage;
-	protected EnergyStorage storage = new EnergyStorage(intStorage);
 
-	public ApexTE(EnergyStorage storage) {
-		this.storage = storage;
+	protected EnergyStorage storage = new EnergyStorage(20000);
+
+	public TileMSUCore(EnergyStorage storage) {
+		super(storage);
 	}
 	
-	public ApexTE() {
+	public TileMSUCore() {
 		
 	}
-	
+
 	@Override
 	public void readFromNBT(NBTTagCompound nbt) {
 
