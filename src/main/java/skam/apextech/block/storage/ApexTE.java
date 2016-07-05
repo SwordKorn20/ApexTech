@@ -1,15 +1,17 @@
 package skam.apextech.block.storage;
-
 import cofh.api.energy.EnergyStorage;
-import cofh.api.energy.IEnergyReceiver;
 import cofh.api.energy.TileEnergyHandler;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 
-public class TileMSUCore extends TileEnergyHandler {
-	
-	protected EnergyStorage storage = new EnergyStorage(20000);
+public class ApexTE extends TileEnergyHandler {
+
+	public static int intStorage;
+	protected EnergyStorage storage = new EnergyStorage(intStorage);
+
+	public ApexTE(EnergyStorage storage) {
+		this.storage = storage;
+	}
 	
 	@Override
 	public void readFromNBT(NBTTagCompound nbt) {
@@ -17,7 +19,7 @@ public class TileMSUCore extends TileEnergyHandler {
 		super.readFromNBT(nbt);
 		storage.readFromNBT(nbt);
 	}
-	
+
 	@Override
 	public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
 
@@ -45,7 +47,4 @@ public class TileMSUCore extends TileEnergyHandler {
 	public int receiveEnergy(EnumFacing from, int maxReceive, boolean simulate) {
 		return storage.receiveEnergy(maxReceive, simulate);
 	}
-	
-	
-	
 }
